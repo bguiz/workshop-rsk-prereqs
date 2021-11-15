@@ -135,10 +135,10 @@ mkdir -p ~/code/rsk/rskj-node
 cd ~/code/rsk/rskj-node
 curl \
   -L \
-  https://github.com/rsksmart/rskj/releases/download/PAPYRUS-2.0.1/rskj-core-2.0.1-PAPYRUS-all.jar \
-  > ./rskj-core-2.0.1-PAPYRUS-all.jar
-sha256sum rskj-core-2.0.1-PAPYRUS-all.jar
-# 43149abce0a737341a0b063f2016a1e73dae19b8af8f2e54657326ac8eedc8a0 rskj-core-2.0.1-PAPYRUS-all.jar
+  https://github.com/rsksmart/rskj/releases/download/IRIS-3.1.0/rskj-core-3.1.0-IRIS-all.jar \
+  > ./rskj-core-3.1.0-IRIS-all.jar
+sha256sum rskj-core-3.1.0-IRIS-all.jar
+# 07dea8cd7b80e1341c06e1c9f6d15f2b381f5d46443db777ebded194088a5784 rskj-core-2.0.1-PAPYRUS-all.jar
 
 ```
 
@@ -151,7 +151,7 @@ For the purposes of this workshop,
 we will run RSKj on Regtest.
 
 ```shell
-java -cp rskj-core-2.0.1-PAPYRUS-all.jar -Drpc.providers.web.cors=* co.rsk.Start --regtest
+java -cp rskj-core-3.1.0-IRIS-all.jar -Drpc.providers.web.cors=* co.rsk.Start --regtest
 
 ```
 
@@ -212,7 +212,7 @@ THe latter option requires no setup, and that is what we'll be doing:
 
 ```shell
 curl \
-  https://public-node.testnet.rsk.co/2.0.1/ \
+  https://public-node.testnet.rsk.co/ \
   -s -X POST -H "Content-Type: application/json" \
   --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}'
 
